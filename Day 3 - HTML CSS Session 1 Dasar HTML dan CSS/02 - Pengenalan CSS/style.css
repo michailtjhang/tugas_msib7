@@ -1,0 +1,628 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+/* Header */
+
+nav {
+    width: 1200px;
+    height: 80px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav img {
+    width: 250px;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+nav ul li {
+    margin-right: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #fff;
+}
+
+nav ul li a {
+    color: #fff;
+}
+
+.btn {
+    width: 150px;
+    height: 50px;
+    background-color: #44ce6f;
+    border-radius: 5px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.5s;
+    color: #fff;
+}
+
+.btn a {
+    color: #fff;
+}
+
+.btn:hover a {
+    color: #44ce6f;
+}
+
+.btn:hover {
+    background-color: #fff;
+    color: #44ce6f;
+}
+
+.Inti {
+    width: 1200px;
+    height: 100vh;
+    margin: auto;
+}
+
+.Inti h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 60px;
+    font-weight: bold;
+    padding-top: 120px;
+    color: #fff;
+}
+
+.Inti p {
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 30px;
+    font-weight: bold;
+    padding-top: 25px;
+}
+
+.Inti .btn {
+    margin-top: 25px;
+}
+
+/* Visi dan Misi */
+.visi{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.visi h1{
+    font-size: 36px;
+}
+
+.visi h2{
+    font-size: 30px;
+    margin-top: 30px;
+}
+
+.visi p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+.visi ul{
+    padding: 15px;
+    padding-top: 0%;
+}
+
+.visi ul li{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: left;
+    padding: 1px;
+}
+
+.visi ol{
+    padding: 15px;
+    padding-top: 0%;
+}
+
+.visi ol li{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    text-align: left;
+    padding: 1px;
+}
+
+.row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.visi-col{
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.visi-col h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.visi-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/* About */
+
+.Abo{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.Abo h1{
+    font-size: 36px;
+}
+
+.Abo h2 {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.Abo p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.Abo-Col {
+    margin-top: 5px;
+    flex-basis: 31%;
+    justify-content: center;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.Abo-Col:hover {
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/* Produk dan Layanan */
+.products {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.products h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.products p {
+    color: #777;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    margin-bottom: 40px;
+}
+
+.products-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.product-col {
+    flex-basis: 31%;
+    background: #fff3f3;
+    border-radius: 10px;
+    padding: 20px 12px;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.product-col h2 {
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.product-col p {
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.product-col:hover {
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+/* Organisasi */
+.organ{
+    display: flex;
+    justify-content: center;
+    gap: 75px;
+}
+
+.org-center{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.org-col{
+    flex-basis: 21%;
+    background: #fff3f3;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.org-col h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+}
+
+.org-col:hover{
+    box-shadow: 0 0 20px 0px rgba(0,0,0,0.2);
+}
+
+.org-col img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    height: 300px;
+    width: 200px;
+}
+
+/* Contact */
+
+.text-contact{
+    font-family: Arial, sans-serif;
+    margin: 30px;
+    color: #000;
+    text-align: center;
+}
+
+.text-contact h1{
+    font-size: 36px;
+}
+
+.text-contact h2{
+    color: #777;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+}
+
+.text-contact p{
+    margin: 10px 0 40px;
+    font-size: 10px;
+    color: #000000;
+}
+
+.con-col{
+    flex-basis: 26%;
+    background: #EEEEEE;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    padding: 20px 12px;
+    box-sizing: border-box;
+}
+
+.con-col h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px;
+}
+.con-col p{
+    font-size: 12px;
+}
+
+.con-col img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+.con-col:hover{
+    box-shadow: 0 0 20px 0px rgba(205, 140, 140, 0.2);
+}
+
+.con-col hr{
+    width: 250px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.con-col a {
+    text-decoration: none;
+}
+
+/* Form */
+.daftar {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    padding-top: 50px;
+}
+
+.daftar h1 {
+    font-size: 36px;
+    text-align: center;
+}
+
+.daftar h2 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.daftar p {
+    color: #777;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+.box-border {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+    flex-basis: 50%;
+    border-radius: 25px;
+    padding: 25px;
+    background: #fff3f3;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.container h2 {
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 500;
+    text-align: center;
+}
+
+.container p{
+    font-size: 0.8rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.form .input-box {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.input-box label {
+    color: #333;
+}
+
+.form .input-box input {
+    position: relative;
+    height: 50px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 8px;
+    color: #707070;
+    background-color: #D0E6FE;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 0 0 10px;
+}
+
+.form .input-box textarea {
+    position: relative;
+    height: 70px;
+    width: 100%;
+    outline: none;
+    font-size: 1rem;
+    margin-top: 8px;
+    color: #707070;
+    background-color: #D0E6FE;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.form .column {
+    display: flex;
+    column-gap: 55px;
+}
+
+.form :where(.produk-option, .option) {
+    display: flex;
+    align-items: center;
+    column-gap: 50px;
+}
+
+.option-box h3{
+    color: #333;
+    font-size: 1rem;
+    font-weight: 400;
+    margin-bottom: 8px;
+}
+
+.form .option {
+    column-gap: 5px;
+    cursor: pointer;
+}
+
+.form :where(.option input, .option label) {
+    cursor: pointer;
+}
+
+.form button {
+    height: 55px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    margin-top: 30px;
+    cursor: pointer;
+    border-radius: 6px;
+    font-weight: 400;
+    transition: all 0.2s ease;
+    background-color: #0D37AF;
+}
+
+.form button:hover {
+    background-color: #1961F4;
+}
+
+/* Contact Us */
+.cargo {
+    width: 80%;
+    margin-top: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    background: #fff;
+    border-radius: 6px;
+    padding: 20px 60px 40px 40px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.cargo .content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cargo .content .left-size {
+    width: 25%;
+    height: 100%;
+    position: relative;
+}
+
+.content .left-size::before {
+    content: '';
+    position: absolute;
+    height: 70%;
+    width: 2px;
+    right: -15px;
+    top: 20%;
+    transform: translateX();
+    background: #afafb6;
+}
+
+.content .left-size .details{
+    width: 75%;
+    text-align: center;
+}
+
+.content .left-size .details i{
+    font-size: 30px;
+    color: #3e2093;
+}
+
+.content .left-size .details .topic{
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.content .left-size .details .text-one{
+    font-size: 14px;
+    color: #afafb6;
+}
+
+.cargo .content .right-size {
+    width: 75%;
+    margin-left: 75px;
+}
+
+.content .right-size .topic-text {
+    font-size: 23px;
+    font-weight: 600;
+    color: #3e2093;
+}
+
+.right-size .input-boxs {
+    height: 50px;
+    width: 100%;
+    margin: 12px 0;
+}
+
+.right-size .input-boxs input,
+.right-size .input-boxs textarea {
+    height: 100%;
+    width: 100%;
+    border: none;
+    font-size: 16px;
+    background: #f0f1f8;
+    border-radius: 6px;
+    padding: 0 15px;
+}
+
+.right-size .massage-box {
+    height: 110px;
+}
+
+.right-size .buttons input[type="button"]{
+    color: #fff;
+    font-size: 18px;
+    outline: none;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    background: #3e2093;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buttons input[type="button"]:hover{
+    background: #5029bc;
+}
+
+/* copyright */
+.wrapper{
+    margin: auto;
+    position: relative;
+}
+
+#copyright{
+    text-align: center;
+    text-decoration: none;
+    font-weight: normal;
+    width: 100%;
+    padding: 50px 0px 50px 0px;
+    margin-top: 50px;
+}

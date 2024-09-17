@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        header {
+            background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30.0,7)),url(Image/Bg.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+    </style>
+    <link rel="shortcut icon" href="Image/Icon.png">
+    <title>Eksporta - Form</title>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html"><img src="Image/Logo.png"></a>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="organisation.html">Organisation</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+                <li><button class="btn"><a href="Form.html">Order Now</a></button></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+
+    <section class="daftar">
+        <h1>Eksporta</h1>
+        <p>Eksporta adalah perusahaan cargo yang berfokus di ekspor dan impor barang-barang dari dan ke berbagai negara di dunia.</p>
+        <div class="container">
+            <h2>Form Pesanan</h2>
+            <p>Silakan isi form berikut untuk memesan barang/jasa dari kami. Kami akan menghubungi Anda segera untuk konfirmasi dan pembayaran.</p>
+            <form action="#" method="post" class="form">
+                <div class="input-box">
+                    <label for="">Nama Lengkap</label>
+                    <input type="text" placeholder="Masukkan nama lengkap">
+                </div>
+                <div class="input-box">
+                    <label for="">Alamat Email</label>
+                    <input type="text" placeholder="Masukkan alamat email">
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <label for="">Nomor Hp</label>
+                        <input type="number" placeholder="Masukkan Nomor Hp">
+                    </div>
+                    <div class="input-box">
+                        <label for="">Tanggal Penjemputan</label>
+                        <input type="text" placeholder="Masukkan nama Kota">
+                    </div>
+                </div>
+
+                <div class="option-box">
+                    <h3>Jenis Barang</h3>
+                    <div class="produk-option">
+                        <div class="option">
+                            <input type="radio" name="option" id="Jenis-eskpor">
+                            <label for="Jenis-eskpor">Ekspor Barang</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="option" id="Jenis-impor">
+                            <label for="Jenis-impor">Impor Barang</label>
+                        </div>
+                        <div class="option">
+                            <input type="radio" name="option" id="Jenis-lain">
+                            <label for="Jenis-lain">Jasa Lainnya</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="input-box">
+                        <label for="">Negara Asal</label>
+                        <input type="text" placeholder="Masukkan negara asal">
+                    </div>
+                    <div class="input-box">
+                        <label for="">Negara Tujuan</label>
+                        <input type="text" placeholder="Masukkan negara tujuan">
+                    </div>
+                </div>
+
+                <div class="input-box">
+                    <label for="">Deskripsi Pesanan:</label>
+                    <textarea name="" id="" cols="60" rows="30" placeholder="Tulis deskripsi pesanan Anda di sini, misalnya nama, jumlah, ukuran, berat, dan harga barang yang ingin Anda ekspor atau impor, atau jenis jasa lainnya yang Anda inginkan" ></textarea>
+                </div>
+
+                <button>Kirim</button>
+            </form>
+        </div>
+    </section>
+
+
+    <div id="copyright">
+        <div class="wrapper">
+            &copy; 2024, <b>Michail</b> All Rights Reserved
+        </div>
+    </div>
+</body>
+</html>

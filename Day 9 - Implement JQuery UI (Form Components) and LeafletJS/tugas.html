@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+
+    <!-- jQuery and jQuery UI -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- LeafletJS -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        padding: 20px;
+      }
+      #map {
+        height: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+      form {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+      input,
+      select,
+      textarea,
+      button {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Michail</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <h1 class="text-center">Contact Us</h1>
+
+    <div id="map"></div>
+
+    <form id="contactForm">
+      <label for="name">Nama:</label>
+      <input type="text" id="name" name="name" required />
+
+      <label for="province">Provinsi:</label>
+      <select id="province" name="province" required>
+        <option value="">Pilih Provinsi</option>
+        <option value="DKI Jakarta">DKI Jakarta</option>
+        <option value="Jawa Barat">Jawa Barat</option>
+        <option value="Jawa Tengah">Jawa Tengah</option>
+        <option value="Jawa Timur">Jawa Timur</option>
+        <option value="Sumatera Utara">Sumatera Utara</option>
+        <option value="Sumatera Selatan">Sumatera Selatan</option>
+        <option value="Kalimantan Barat">Kalimantan Barat</option>
+        <option value="Sulawesi Selatan">Sulawesi Selatan</option>
+        <!-- Tambahkan provinsi lain sesuai kebutuhan -->
+      </select>
+
+      <label for="city">Kota:</label>
+      <select id="city" name="city" required>
+        <option value="">Pilih Kota</option>
+      </select>
+
+      <label for="message">Pesan:</label>
+      <textarea id="message" name="message" rows="4" required></textarea>
+
+      <button type="submit" class="btn btn-primary">Submit via WhatsApp</button>
+    </form>
+
+    <script>
+      // Initialize LeafletJS Map
+      const map = L.map("map").setView([-6.289927974916825, 106.8092417777444], 15);
+
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "&copy; OpenStreetMap contributors",
+      }).addTo(map);
+
+      L.marker([-6.289927974916825, 106.8092417777444])
+        .addTo(map)
+        .bindPopup("Menara 165")
+        .openPopup();
+
+      // Data untuk kota
+      const cityOptions = {
+        "DKI Jakarta": [
+          "Jakarta Pusat",
+          "Jakarta Barat",
+          "Jakarta Selatan",
+          "Jakarta Timur",
+          "Jakarta Utara",
+        ],
+        "Jawa Barat": ["Bandung", "Bogor", "Bekasi", "Depok"],
+        "Jawa Tengah": ["Semarang", "Solo", "Magelang"],
+        "Jawa Timur": ["Surabaya", "Malang", "Kediri"],
+        "Sumatera Utara": ["Medan", "Binjai", "Tebing Tinggi"],
+        "Sumatera Selatan": ["Palembang", "Prabumulih", "Lubuklinggau"],
+        "Kalimantan Barat": ["Pontianak", "Singkawang", "Mempawah"],
+        "Sulawesi Selatan": ["Makassar", "Parepare", "Palopo"],
+      };
+
+      $("#province").change(function () {
+        const province = $(this).val();
+        const citySelect = $("#city");
+        citySelect.empty();
+        citySelect.append('<option value="">Pilih Kota</option>');
+        if (province && cityOptions[province]) {
+          cityOptions[province].forEach(function (city) {
+            citySelect.append(`<option value="${city}">${city}</option>`);
+          });
+        }
+      });
+
+      // kilik tombol submit dan kirimkan ke WhatsApp
+      $("#contactForm").submit(function (event) {
+        event.preventDefault();
+
+        const name = $("#name").val();
+        const province = $("#province").val();
+        const city = $("#city").val();
+        const message = $("#message").val();
+
+        if (name && province && city && message) {
+          const whatsappURL = `https://wa.me/6281314092890?text=Halo!%20saya%20${encodeURIComponent(
+            name
+          )}%20dari%20${encodeURIComponent(city)},%20${encodeURIComponent(
+            province
+          )}.%20${encodeURIComponent(message)}`;
+          window.open(whatsappURL, "_blank");
+        } else {
+          alert("Mohon isi semua data!");
+        }
+      });
+    </script>
+  </body>
+</html>

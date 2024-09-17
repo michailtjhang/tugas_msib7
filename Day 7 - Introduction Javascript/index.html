@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+        }
+        .alarm-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .time {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        .alarm-input {
+            font-size: 1.2em;
+        }
+        .set-alarm-btn {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .set-alarm-btn:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="alarm-container">
+        <div class="time" id="currentTime">00:00:00</div>
+        <input type="time" id="alarmTime" class="alarm-input" />
+        <button class="set-alarm-btn" id="setAlarmBtn">Set Alarm</button>
+    </div>
+
+    <script>
+        function updateCurrentTime() {
+            const currentTimeElement = document.getElementById('currentTime');
+            const now = new Date();
+            currentTimeElement.innerText = now.toLocaleTimeString();
+        }
+
+        function playAlarmSound() {
+            const alarmSound = new Audio('fire-alarm.mp3');
+            alarmSound.play();
+        }
+
+        function checkAlarm(alarmTime) {
+            const now = new Date();
+            const currentFormattedTime = now.toTimeString().split(' ')[0];
+            
+            if (currentFormattedTime === alarmTime) {
+                playAlarmSound();
+                clearInterval(alarmCheckInterval); 
+                alert('Alarm is ringing!');
+            }
+        }
+
+        document.getElementById('setAlarmBtn').addEventListener('click', function() {
+            const alarmTimeInput = document.getElementById('alarmTime').value;
+            if (!alarmTimeInput) {
+                alert('Please set a valid alarm time');
+                return;
+            }
+
+            const alarmTimeFormatted = alarmTimeInput + ':00'; 
+            alert('Alarm set for ' + alarmTimeInput);
+            
+            // Check the alarm every second
+            alarmCheckInterval = setInterval(() => checkAlarm(alarmTimeFormatted), 1000);
+        });
+
+        setInterval(updateCurrentTime, 1000);
+
+        let alarmCheckInterval; 
+    </script>
+
+</body>
+</html>

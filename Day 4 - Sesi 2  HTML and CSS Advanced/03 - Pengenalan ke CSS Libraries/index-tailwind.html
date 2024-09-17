@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Toko Online EduMart</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header / Navbar -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-6 py-4 flex justify-between items-center"
+      >
+        <div>
+          <a href="#home" class="text-2xl font-bold text-gray-800">EduMart</a>
+        </div>
+        <nav>
+          <ul class="flex space-x-6">
+            <li>
+              <a href="#home" class="text-gray-600 hover:text-gray-900"
+                >Beranda</a
+              >
+            </li>
+            <li>
+              <a href="#products" class="text-gray-600 hover:text-gray-900"
+                >Produk</a
+              >
+            </li>
+            <li>
+              <a href="#about" class="text-gray-600 hover:text-gray-900"
+                >Tentang Kami</a
+              >
+            </li>
+            <li>
+              <a href="#contact" class="text-gray-600 hover:text-gray-900"
+                >Kontak</a
+              >
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Home Section -->
+    <section
+      id="home"
+      class="bg-cover bg-center h-screen text-white"
+      style="
+        background-image: url('https://cdn.pixabay.com/photo/2020/05/21/18/52/supermarket-5202138_640.jpg');
+      "
+    >
+      <div
+        class="container mx-auto h-full flex items-center justify-center text-center"
+      >
+        <div>
+          <h1 class="text-5xl font-bold">Selamat Datang di EduMart</h1>
+          <p class="mt-4 text-lg">
+            Tempat Terbaik untuk Kebutuhan Edukasi Anda
+          </p>
+          <a
+            href="#products"
+            class="mt-6 inline-block bg-blue-500 text-white py-3 px-6 rounded hover:bg-blue-600"
+            >Belanja Sekarang</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="py-16 bg-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-8">Produk Kami</h2>
+        <p class="mb-6 text-lg text-gray-600">
+          Kami menyediakan berbagai macam produk untuk mendukung kegiatan
+          belajar Anda. Mulai dari buku, alat tulis, hingga perlengkapan kantor
+          yang lengkap dan terjangkau. Berikut adalah produk-produk unggulan
+          kami:
+        </p>
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+        >
+          <!-- Product 1 -->
+          <div class="bg-gray-100 shadow-md rounded-lg overflow-hidden">
+            <img
+              src="https://ebooks.gramedia.com/ebook-covers/51083/image_highres/ID_PMBPPM2020MTH03.jpg"
+              alt="Gambar Buku"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Buku Pelajaran Matematika
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Buku referensi terbaik untuk siswa SMP/SMA yang ingin menguasai
+                Matematika dengan mudah dan cepat.
+              </p>
+              <div class="mt-4">
+                <span class="text-gray-900 font-bold">Rp 50.000</span>
+              </div>
+              <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              >
+                Beli Sekarang
+              </button>
+            </div>
+          </div>
+          <!-- Product 2 -->
+          <div class="bg-gray-100 shadow-md rounded-lg overflow-hidden">
+            <img
+              src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/5/22/60ce3a37-6a8e-4235-be53-482fd114d7b9.jpg"
+              alt="Gambar Pensil"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Pensil Mekanik
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Pensil mekanik berkualitas tinggi yang nyaman digunakan dan
+                awet, cocok untuk menggambar dan menulis.
+              </p>
+              <div class="mt-4">
+                <span class="text-gray-900 font-bold">Rp 25.000</span>
+              </div>
+              <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              >
+                Beli Sekarang
+              </button>
+            </div>
+          </div>
+          <!-- Product 3 -->
+          <div class="bg-gray-100 shadow-md rounded-lg overflow-hidden">
+            <img
+              src="https://www.bhinneka.com/blog/wp-content/uploads/2022/06/Laptop-Untuk-Pelajar-ASUS-Vivobook-A407MA.webp"
+              alt="Gambar Laptop"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800">
+                Laptop untuk Pelajar
+              </h3>
+              <p class="text-gray-600 mt-2">
+                Laptop ringan dan cepat, dilengkapi dengan spesifikasi yang
+                ideal untuk kebutuhan belajar dan multitasking.
+              </p>
+              <div class="mt-4">
+                <span class="text-gray-900 font-bold">Rp 5.000.000</span>
+              </div>
+              <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              >
+                Beli Sekarang
+              </button>
+            </div>
+          </div>
+          <!-- Product 4 -->
+          <div class="bg-gray-100 shadow-md rounded-lg overflow-hidden">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAgkO81gsJYCzQAmy3dv7_tq-C3O1Jyq4iCw&s"
+              alt="Gambar Tas"
+              class="w-full h-56 object-cover"
+            />
+            <div class="p-4">
+              <h3 class="text-xl font-semibold text-gray-800">Tas Sekolah</h3>
+              <p class="text-gray-600 mt-2">
+                Tas sekolah trendy dan tahan lama, tersedia dalam berbagai
+                pilihan warna yang menarik.
+              </p>
+              <div class="mt-4">
+                <span class="text-gray-900 font-bold">Rp 150.000</span>
+              </div>
+              <button
+                class="mt-4 bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600"
+              >
+                Beli Sekarang
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 bg-gray-100">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-8">Tentang Kami</h2>
+        <p class="text-lg text-gray-600">
+          EduMart adalah toko online terpercaya yang menyediakan produk edukasi
+          terbaik untuk pelajar, mahasiswa, hingga profesional. Kami berkomitmen
+          untuk memberikan produk berkualitas dengan harga yang terjangkau.
+          Dengan pengalaman lebih dari 5 tahun di industri ini, kami terus
+          berinovasi untuk memenuhi kebutuhan belajar pelanggan kami.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+      <div class="container mx-auto text-center">
+        <h2 class="text-3xl font-semibold mb-8">Kontak Kami</h2>
+        <p class="text-lg text-gray-600">
+          Jika Anda memiliki pertanyaan atau memerlukan bantuan, jangan ragu
+          untuk menghubungi kami melalui informasi di bawah ini:
+        </p>
+        <div class="mt-8">
+          <p class="text-gray-800">Email: support@edumart.com</p>
+          <p class="text-gray-800">Telepon: +62 812 3456 7890</p>
+          <p class="text-gray-800">
+            Alamat: Jl. Pendidikan No. 10, Jakarta, Indonesia
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-6">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2024 EduMart. Semua Hak Dilindungi.</p>
+      </div>
+    </footer>
+  </body>
+</html>

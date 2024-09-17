@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas 3: Event Listener Mouse Hover</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <canvas id="lineChart3"></canvas>
+
+    <script>
+        const ctx3 = document.getElementById('lineChart3').getContext('2d');
+        const chart3 = new Chart(ctx3, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+                datasets: [{
+                    label: 'Dataset 3',
+                    data: [1, 2, 3, 4, 5],
+                    borderColor: 'green',
+                    borderWidth: 2
+                }]
+            }
+        });
+
+        // Menambah event listener untuk event mouse hover
+        document.getElementById('lineChart3').addEventListener('mousemove', (event) => {
+            const points = chart3.getElementsAtEventForMode(event, 'nearest', { intersect: true }, false);
+            
+            if (points.length) {
+                const index = points[0].index;
+                console.log(`Data point yang dihover: Index ${index}`);
+            }
+        });
+    </script>
+
+</body>
+</html>
