@@ -1,0 +1,84 @@
+Buatlah tabel : (Tentukan mana yang menjadi primary key dan foreign key) 
+- Mahasiswa yang isi kolomnya yaitu : id, NIM. name dan alamat 
+- Mata Kuliah yang isi kolomnya yaitu : id, name, sks 
+- Ambil_MK yang isi kolomnya yaitu : id, nilai 
+
+Soal 
+1. Buatkan nama mahasiswa dan nilai mata kuliah yang memiliki nilai tertinggi dalam mata kuliah ‘A03’. 
+SELECT m.name, am.nilai
+FROM Mahasiswa m
+JOIN Ambil_MK am ON m.id = am.mahasiswa_id
+WHERE am.matakuliah_id = 'A03'
+ORDER BY am.nilai DESC
+LIMIT 1;
+
+2. Dari data mahasiswa yang terdaftar, siapa sajakah mahasiswa yang tidak mengambil matakuliah ‘A01’? 
+SELECT m.name
+FROM Mahasiswa m
+WHERE m.id NOT IN (
+    SELECT am.mahasiswa_id
+    FROM Ambil_MK am
+    WHERE am.matakuliah_id = 'A01'
+);
+
+3. Berapakah nilai terendah dari mahasiswa yang bernama Viyella? 
+SELECT MIN(am.nilai) AS nilai_terendah
+FROM Mahasiswa m
+JOIN Ambil_MK am ON m.id = am.mahasiswa_id
+WHERE m.name LIKE '%Viyella%';
+
+4. Jelaskan secara singkat tentang jenis-jenis subquery serta berikan contoh penggunaannya
+- Subquery Tunggal (Single-row Subquery)
+Subquery yang mengembalikan satu baris data.
+
+Contoh: Mencari mahasiswa dengan nilai tertinggi di mata kuliah 'A01'
+SELECT m.name
+FROM Mahasiswa m
+WHERE m.id = (SELECT am.mahasiswa_id FROM Ambil_MK am WHERE am.matakuliah_id = 'A01' ORDER BY am.nilai DESC LIMIT 1);
+
+- Subquery Multi-row (Multi-row Subquery)
+Subquery yang mengembalikan lebih dari satu baris data.
+
+Contoh: Mencari mahasiswa yang tidak mengambil mata kuliah tertentu
+SELECT m.name
+FROM Mahasiswa m
+WHERE m.id NOT IN (SELECT am.mahasiswa_id FROM Ambil_MK am WHERE am.matakuliah_id = 'A01');
+
+- Subquery dengan EXISTS
+Subquery yang digunakan untuk memeriksa keberadaan data dalam subquery.
+
+Contoh: Mengecek apakah ada mahasiswa yang mengambil mata kuliah 'A02'.
+SELECT m.name
+FROM Mahasiswa m
+WHERE EXISTS (SELECT 1 FROM Ambil_MK am WHERE am.mahasiswa_id = m.id AND am.matakuliah_id = 'A02');
+
+- Subquery Korrelated (Correlated Subquery)
+Subquery yang bergantung pada query luar dan dieksekusi untuk setiap baris.
+
+Contoh: Mencari mahasiswa dengan nilai di atas rata-rata per mata kuliah.
+SELECT m.name
+FROM Mahasiswa m
+WHERE EXISTS (
+    SELECT 1 
+    FROM Ambil_MK am 
+    WHERE am.mahasiswa_id = m.id 
+    AND am.nilai > (SELECT AVG(am2.nilai) FROM Ambil_MK am2 WHERE am2.matakuliah_id = am.matakuliah_id)
+);
+
+- Nested subquery (subquery bersarang)
+subquery yang berada di dalam subquery lainnya, dan digunakan untuk skenario yang lebih kompleks di mana hasil dari subquery pertama digunakan sebagai input untuk subquery kedua, atau sebaliknya.
+
+Contoh: mencari nama mahasiswa yang memiliki nilai di atas rata-rata dari semua mahasiswa yang mengambil mata kuliah yang diambil oleh mahasiswa 'Viyella Arya'
+SELECT m.name, am.nilai
+FROM Mahasiswa m
+JOIN Ambil_MK am ON m.id = am.mahasiswa_id
+WHERE am.nilai > (
+    SELECT AVG(am2.nilai)
+    FROM Ambil_MK am2
+    WHERE am2.matakuliah_id IN (
+        SELECT am3.matakuliah_id
+        FROM Mahasiswa m3
+        JOIN Ambil_MK am3 ON m3.id = am3.mahasiswa_id
+        WHERE m3.name = 'Viyella Arya'
+    )
+);

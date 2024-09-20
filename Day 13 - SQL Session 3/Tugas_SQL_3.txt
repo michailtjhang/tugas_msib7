@@ -1,0 +1,64 @@
+Buatlah tabel : (Tentukan mana yang menjadi primary key) 
+- Siswa yang isi kolomnya yaitu : id, NIS, nama, TTL, gender, alamat 
+- Nilai yang isi kolomnya yaitu : id, nilai_IPA, nilai_IPS, nilai_MTK 
+
+Soal 
+1. Buatlah sebuah procedure dengan nama “getSiswaByBorn” yang digunakan menampilkan data siswa pada tabel “datasiswa” berdasarkan kriteria input tempat lahir! 
+DELIMITER //
+CREATE PROCEDURE getSiswaByBorn(IN tempatLahir VARCHAR(100))
+BEGIN
+    SELECT * 
+    FROM Siswa 
+    WHERE TTL LIKE CONCAT('%', tempatLahir, '%');
+END //
+DELIMITER ;
+
+2. Buatlah sebuah function dengan nama “getJmlByGender” untuk menghitung jumlah siswa pada tabel “datasiswa” berdasarkan kriteria input gender! Triggers Instruksi : 
+DELIMITER //
+CREATE FUNCTION getJmlByGender(genderInput CHAR(1))
+RETURNS INT
+DETERMINISTIC
+BEGIN
+    DECLARE jumlah INT;
+    
+    SELECT COUNT(*) INTO jumlah
+    FROM Siswa
+    WHERE gender = genderInput;
+    
+    RETURN jumlah;
+END //
+DELIMITER ;
+
+query run :
+-- Menghitung jumlah siswa laki-laki
+SELECT getJmlByGender('L');  
+
+Buatlah tabel : (Tentukan mana yang menjadi primary key dan foreign key) 
+
+- products yang isi kolomnya yaitu : id,nama,harga 
+- stock yang isi kolomnya yaitu : id, quantity 
+
+Soal 
+3. Buatlah sebuah trigger yang akan memastikan bahwa setiap kali sebuah produk baru ditambahkan ke dalam tabel Products, informasi terkait produk tersebut juga otomatis dimasukkan ke dalam tabel Stocks dengan nilai awal stok 0. Tuliskan perintah SQL untuk membuat trigger yang memenuhi permintaan tersebut. 
+DELIMITER //
+CREATE TRIGGER after_product_insert
+AFTER INSERT ON Products
+FOR EACH ROW
+BEGIN
+    INSERT INTO Stocks (product_id, quantity) 
+    VALUES (NEW.id, 0);
+END //
+DELIMITER ;
+
+4. Sebagai seorang pengembang database, Anda telah membuat sebuah trigger yang akan mengecek stok setiap kali ada perubahan data pada tabel Stocks. Trigger tersebut akan menampilkan pesan peringatan jika stok kurang dari 10. Tuliskan perintah SQL untuk membuat trigger yang mencapai fungsi tersebut.
+DELIMITER //
+CREATE TRIGGER check_stock_after_update
+AFTER UPDATE ON Stocks
+FOR EACH ROW
+BEGIN
+    IF NEW.quantity < 10 THEN
+        SIGNAL SQLSTATE '45000'
+        SET MESSAGE_TEXT = 'Warning: Stock kurang dari 10!';
+    END IF;
+END //
+DELIMITER ;
