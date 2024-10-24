@@ -1,0 +1,5 @@
+NAMA: MICHAIL
+
+Link dokumentasi Postman: https://documenter.getpostman.com/view/31648036/2sAXxTbW4g
+Link drive: https://drive.google.com/drive/folders/1L2a6qtSISQI8QV8k5Yr2HahktA9wOEga?usp=sharing 
+Link GitHub: https://github.com/michailtjhang/CartifyAPI
